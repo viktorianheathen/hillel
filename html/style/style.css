@@ -1,0 +1,261 @@
+/*====================->  Общие  <-======================*/
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body
+{
+	background-color: #deefff;
+}
+ol, ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+a, a:hover, a:visited, a:active, a:focus
+{
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	margin: 0;
+}
+
+/*=====================->  ////Общие  <-====================*/
+
+/*====================->  Шапка  <-======================*/
+header.header
+{
+	background-color: #376285;
+	height: 100px;
+}
+.header_inner
+{
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+}
+.logo_box
+{
+	width: 285px;
+}
+.logo_box a
+{
+	color: #fff;
+	font-size: 40px;
+	text-shadow: 0 0 5px #000;
+	height: 100px;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+	font-family: cursive;
+}
+.logo_box a .fa
+{
+	color: #e7eb96;
+	margin-right: 10px;
+}
+.logo_box a span
+{
+	color: #fe0a00;
+}
+.user_box
+{
+	color: #fff;
+	font-size: 20px;
+	font-family: cursive;
+}
+.user_box a
+{
+	color: #fe0a00;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	margin-left: 5px;
+}
+.user_box a:hover
+{
+	opacity: 0.7;
+}
+/*=====================->  ////Шапка  <-====================*/
+
+/*====================->  Контент  <-======================*/
+.app_tools
+{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	align-items: center;
+	-webkit-align-items: center;
+	height: 50px;
+	margin: 20px 0;
+}
+.search_box
+{
+	width: 50%;
+	position: relative;
+	width: 435px;
+}
+.search_box input
+{
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	padding: 0 10px;
+	color: #00bdaa;
+	width: 100%;
+	background-color: #fff;
+}
+.search_box button
+{
+	position: absolute;
+	background-color: transparent;
+	color: #fe0a00;
+	border: none;
+	height: 28px;
+	font-size: 25px;
+	top: 5px;
+    right: 10px;
+}
+.course_item
+{
+	background-color: #376285;
+	min-height: 150px;
+	padding: 20px;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	align-items: center;
+	-webkit-align-items: center;
+	margin-bottom: 20px;
+	border-radius: 7px;
+}
+.course_body
+{
+	margin-right: 20px;
+	width: 80%;
+	color: #fff;
+}
+.c_body_head
+{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	align-items: center;
+	-webkit-align-items: center;
+	margin-bottom: 10px;
+}
+.c_body_head ul
+{
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	align-items: center;
+	-webkit-align-items: center;
+}
+.c_body_head ul li
+{
+	margin-right: 10px;
+	height: 40px;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+}
+.c_body_head ul li a
+{
+	color: #fff;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+.c_body_head ul li a:hover
+{
+	opacity: 0.7;
+}
+.c_body_head ul li + li
+{
+	border-left: 2px solid #e7eb96;
+	padding-left: 10px;
+}
+.add_less_item
+{
+	height: 40px;
+	background-color: #fe0a00;
+	border: none;
+	padding: 0 10px;
+	border-radius: 5px;
+	color: #e7eb96;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+.add_less_item:hover
+{
+	background-color: #e7eb96;
+	color: #fe0a00;
+}
+.course_button_set
+{
+	width: 15%;
+	height: 120px;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+.course_button_set button
+{
+	width: 100%;
+	height: 40px;
+	margin: 5px 0;
+}
+.edit_course
+{
+	border-radius: 5px;
+	border: none;
+	background-color: #fe0a00;
+	color: #e7eb96;
+}
+.delete_course
+{
+	border-radius: 5px;
+	border: none;
+	background-color: #deefff;
+	color: #fe0a00;
+}
+
+/*=====================->  ////Контент  <-====================*/
+
+/*=====================->  Футер  <-====================*/
+
+footer.footer
+{
+	background-color: #376285;
+	height: 100px;
+	color: #fff;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+}
+
+/*=====================->  ////Футер  <-====================*/
