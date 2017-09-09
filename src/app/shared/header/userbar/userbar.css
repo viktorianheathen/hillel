@@ -1,0 +1,18 @@
+.user_box
+{
+	color: #fff;
+	font-size: 20px;
+	font-family: cursive;
+}
+.user_box a
+{
+	color: #fe0a00;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	margin-left: 5px;
+}
+.user_box a:hover
+{
+	opacity: 0.7;
+}

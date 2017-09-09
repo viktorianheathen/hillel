@@ -30,9 +30,15 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+import { Header, Searchbar, Courselist, Footer } from './shared/index';
+
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+
+// import '../styles/reboot.css';
+import '../styles/grid.css';
+import '../styles/style.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -56,7 +62,8 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    Header, Searchbar, Courselist, Footer  
   ],
   /**
    * Import Angular's modules.
