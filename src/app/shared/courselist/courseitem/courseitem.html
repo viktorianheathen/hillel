@@ -1,38 +1,26 @@
-<ul class="courses_list">
-    <li *ngFor="let courseItem of courseList">
-        <div class="course_item">
-            <div class="course_body">
-                <div class="c_body_head">
-                    <ul>
-                        <li>
-                            <h2>
-                                {{CourseItem.name}}
-                            </h2>
-                        </li>
-                        <li>
-                            <span>{{CourseItem.duration}}</span>
-                        </li>
-                    </ul>
-                    <div class="date_box">
-                        {{CourseItem.date}}
-                    </div>
-                </div>
-                <div class="c_body_main">
-                    <p>
-                        {{CourseItem.desc}}
-                    </p>
-                </div>
-            </div>
-            <div class="course_button_set">
-                <button type="button" class="edit_course">
-                    <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-                    <span>Edit course</span>
-                </button>
-                <button type="button" class="delete_course">
-                    <span><i class="fa fa-times" aria-hidden="true"></i></span>
-                    <span>Delete course</span>
-                </button>
+<div class="course_item">
+    <div class="course_body">
+        <div class="c_body_head">
+            <ul>
+                <li>
+                    <h2>
+                        {{courseItem.name}}
+                    </h2>
+                </li>
+                <li>
+                    <span>{{courseItem.duration}}</span>
+                </li>
+            </ul>
+            <div class="date_box">
+                {{courseItem.date}}
             </div>
         </div>
-    </li>
-</ul>
+        <div class="c_body_main">
+            <p>
+                {{courseItem.desc}}
+            </p>
+        </div>
+    </div>
+    <app-buttonset (deleteCourse)="onDeleteCourse()"></app-buttonset>
+</div>
+

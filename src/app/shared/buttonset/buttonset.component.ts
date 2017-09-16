@@ -1,26 +1,23 @@
 import { Component, Input, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
-import {CourseItem} from '../courselist.model'; 
 
 @Component({
     
-    selector: 'app-courseitem',
+    selector: 'app-buttonset',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: [ './courseitem.css' ],
-    templateUrl: './courseitem.html',
+    styleUrls: [ './buttonset.css' ],
+    templateUrl: './buttonset.html',
     
 })
 
-export class CourseItemComponent
-    {
-        @Input() public courseItem: CourseItem;
+export class ButtonSet
+    {   
         @Output() deleteCourse: EventEmitter<any> = new EventEmitter();
-        
+
         constructor() {}
 
         onDeleteCourse(){
 
             this.deleteCourse.emit();
-            console.log('Course Item');
 
         }
     }

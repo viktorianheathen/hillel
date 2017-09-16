@@ -30,7 +30,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
-import { Header, Searchbar, Courselist, Footer } from './shared/index';
+import { Header, Userbar, Searchbar, Footer } from './shared/index';
 
 
 import '../styles/styles.scss';
@@ -39,6 +39,9 @@ import '../styles/headings.css';
 // import '../styles/reboot.css';
 import '../styles/grid.css';
 import '../styles/style.css';
+
+
+import { CoursesModule } from './shared/courselist/courselist.module';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -63,7 +66,7 @@ type StoreType = {
     HomeComponent,
     NoContentComponent,
     XLargeDirective,
-    Header, Searchbar, Courselist, Footer  
+    Header, Userbar, Searchbar, Footer
   ],
   /**
    * Import Angular's modules.
@@ -73,6 +76,7 @@ type StoreType = {
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    CoursesModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
