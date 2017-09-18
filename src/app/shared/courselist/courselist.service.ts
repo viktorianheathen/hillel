@@ -54,4 +54,11 @@ export class CoursesService {
         console.log(index);
     }
 
+    onEditCourse(index:number): void 
+    {
+        let th_el = this.courseList[index];
+        th_el.name = "New Lesson " + th_el.id;
+        th_el.desc = "New description";
+    }
+
 }

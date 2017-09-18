@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation, OnInit, OnDestroy} from '@angular/core';
-import {CourseItem} from './courselist.model';
+import { CourseItem } from './courselist.model';
 import { CoursesService } from './courselist.service';
 
 @Component({
@@ -30,5 +30,12 @@ export class Courselist implements OnInit, OnDestroy
         onDeleteCourse(index:number)
         {
             this.coursesService.deleteCourse(index);
+        }
+
+        onEditCourse(index:number): void {
+
+            console.log('Editing! Courselist!');
+            this.coursesService.onEditCourse(index);
+
         }
     }

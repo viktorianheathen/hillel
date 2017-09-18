@@ -11,15 +11,15 @@ import { Component, Input, Output, ViewEncapsulation, EventEmitter} from '@angul
 
 export class EditButton
     {   
-        @Output() EditClick: EventEmitter<string> = new EventEmitter();
+        @Output() EditCourse: EventEmitter<string> = new EventEmitter();
 
         constructor() {}
 
-        onEditClick(): void {
+        onEditCourse(): void {
             
-            console.log('Edit button');
-            // this.EditClick.emit('Edit click!');
-            
+            this.EditCourse.emit();
+            console.log('Editing! CLick button!');
+
         }
     }
     

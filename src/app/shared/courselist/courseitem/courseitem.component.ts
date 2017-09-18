@@ -14,6 +14,7 @@ export class CourseItemComponent
     {
         @Input() public courseItem: CourseItem;
         @Output() deleteCourse: EventEmitter<any> = new EventEmitter();
+        @Output() EditCourse: EventEmitter<any> = new EventEmitter();
         
         constructor() {}
 
@@ -21,6 +22,13 @@ export class CourseItemComponent
 
             this.deleteCourse.emit();
             console.log('Course Item');
+
+        }
+
+        onEditCourse(): void {
+            
+            this.EditCourse.emit();
+            console.log('Editing! CourseItem!');
 
         }
     }

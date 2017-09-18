@@ -1,5 +1,5 @@
 <ul class="courses_list">
     <li *ngFor="let courseItem of courseList; let i = index">
-        <app-courseitem [courseItem]="courseItem" (deleteCourse)="onDeleteCourse(i)"></app-courseitem>
+        <app-courseitem [courseItem]="courseItem" (deleteCourse)="onDeleteCourse(i)" (EditCourse)="onEditCourse(i)"></app-courseitem>
     </li>
 </ul>
