@@ -4,34 +4,37 @@ import { CommonModule } from "@angular/common";
 //Custom services
 import { CoursesService } from "./courselist.service";
 
+
+import { CourseItemModule } from './courseitem/courseitem.module';
+
 // Custom components
 import { Courselist } from './courselist.component';
-import { CourseItemComponent } from './courseitem/courseitem.component';
-import { ButtonSet, EditButton, DeleteButton } from '../buttonset/index';
+
+import { SortPipe } from './sort.pipe';
+import { TransformPipe } from './transform.pipe';
 
 // Declarations
 @NgModule({
 
 declarations: [
 
-Courselist, CourseItemComponent, ButtonSet, EditButton, DeleteButton
+Courselist, SortPipe, TransformPipe
 
 ],
 
 imports: [
 
-CommonModule
+CommonModule, CourseItemModule
 
 ],
 providers: [
 
-    CoursesService
+    CoursesService, SortPipe
 
 ],
 exports: [
 
-    Courselist,
-    CourseItemComponent
+    Courselist
 
 ]
 })

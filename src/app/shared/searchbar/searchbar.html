@@ -1,8 +1,6 @@
 <div class="search_box" id="search_box">
-    <form action="">
-        <input type="text" />
-        <button type="submit" class="to_search">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-    </form>
+    <input type="text" [(ngModel)] = "searchString" (ngModelChange) = "onSearch(searchString)" placeholder="search lessons..."/>
+    <button type="button" class="to_search" (click)="onSearch(searchString)">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
 </div>

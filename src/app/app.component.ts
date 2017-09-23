@@ -30,7 +30,7 @@ import { AppState } from './app.service';
 				<div class="row">
 					<div class="app_tools">
                         
-                        <app-searchbar></app-searchbar>
+                        <app-searchbar (search)="onSearch($event)"></app-searchbar>
 
 						
 						<div class="add_less_box">
@@ -42,7 +42,7 @@ import { AppState } from './app.service';
 					</div>
 					<div class="courses_box">
 						
-                        <app-courselist></app-courselist>
+                        <app-courselist [filterString]='filterString'></app-courselist>
 
 					</div>
 				</div>
@@ -63,6 +63,8 @@ export class AppComponent implements OnInit {
   
   public appLogoTitle = `LessLister`;
     
+  public filterString: string = '';
+
   constructor(
     public appState: AppState
   ) {}
@@ -74,6 +76,11 @@ export class AppComponent implements OnInit {
   onLogoCLick(headerString: string): void
     {
         console.log('APP COMPONENT', headerString);
+    }
+
+    onSearch(search: string)
+    {
+        this.filterString = search;
     }
     
 }

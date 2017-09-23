@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
 
 @Component({
     
@@ -10,5 +10,19 @@ import { Component, ViewEncapsulation} from '@angular/core';
 })
 export class Searchbar
     {
-        
+
+        // Создаем платформу для эмита
+        @Output() search: EventEmitter<string> = new EventEmitter();
+
+        // Создаем свойство для передачи значения
+        searchString: string;
+
+        constructor(){}
+
+
+        // Создаем метод поиска
+        onSearch(searchString: string)
+        {
+            this.search.emit(searchString);
+        }
     }

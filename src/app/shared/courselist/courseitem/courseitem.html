@@ -19,6 +19,18 @@
             <p>
                 {{courseItem.desc}}
             </p>
+
+            <div [ngSwitch]="courseItem.desc">
+                <template [ngSwitchCase]="courseItem.desc">
+                    awesome
+                </template>
+                <template [ngSwitchCase]="lorem2">
+                    awesome2
+                </template>
+                <template ngSwitchDefault>
+                    Def_awesome
+                </template>
+            </div>
         </div>
     </div>
     <app-buttonset (deleteCourse)="onDeleteCourse()" (EditCourse)="onEditCourse()"></app-buttonset>

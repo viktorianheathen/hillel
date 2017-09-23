@@ -1,6 +1,9 @@
-import { Component, Input, ViewEncapsulation, OnInit, OnDestroy} from '@angular/core';
+import { Component, Input, ViewEncapsulation, OnInit, OnChanges, OnDestroy, ViewChild, EventEmitter, Output, SimpleChanges} from '@angular/core';
 import { CourseItem } from './courselist.model';
 import { CoursesService } from './courselist.service';
+import { CourseItemComponent } from './courseitem/courseitem.component';
+import { SortPipe } from './sort.pipe';
+
 
 @Component({
     
@@ -11,15 +14,24 @@ import { CoursesService } from './courselist.service';
     
 })
 
-export class Courselist implements OnInit, OnDestroy
+export class Courselist implements OnInit, OnDestroy, OnChanges
     {
         @Input() public courseList: CourseItem[];
+        @Input() filterString: string;
         
-        constructor(private coursesService: CoursesService) {}
+        @Output() search: EventEmitter<string> = new EventEmitter();
+        @ViewChild(CourseItemComponent) private course: CourseItemComponent;
+
+        constructor(private coursesService: CoursesService, private sortPipe: SortPipe) {
+
+            this.filterCourses = this.filterCourses.bind(this);
+
+        }
 
         public ngOnInit(): void
         {
             this.courseList = this.coursesService.getCourseItems();
+            console.log(this.sortPipe.transform<CourseItem>(this.courseList, 'duration'));
         }
 
         public ngOnDestroy(): void
@@ -27,15 +39,28 @@ export class Courselist implements OnInit, OnDestroy
 
         }
 
+
+        // Отлавливаем новые данные
+        ngOnChanges(changes: SimpleChanges): void 
+        {
+            console.log(changes);
+            console.log(changes['filterString'] && changes['filterString'].currentValue);
+        }
+
         onDeleteCourse(index:number)
         {
             this.coursesService.deleteCourse(index);
         }
 
-        onEditCourse(index:number): void {
+        onEditCourse(courseItem: CourseItem): void {
 
             console.log('Editing! Courselist!');
-            this.coursesService.onEditCourse(index);
+            this.coursesService.onEditCourse(courseItem);
 
+        }
+
+        filterCourses(searchString: string, courseList: CourseItem[]): CourseItem[]
+        {
+            return courseList.filter((course: CourseItem) => course.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
         }
     }

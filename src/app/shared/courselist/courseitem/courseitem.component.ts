@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
-import {CourseItem} from '../courselist.model'; 
+import {CourseItem} from '../courselist.model';
 
 @Component({
     

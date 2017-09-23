@@ -14,7 +14,8 @@ export class CoursesService {
                                             Рыбными силуэт, злых агенство единственное которой которое свою коварный она точках пунктуация,
                                             семантика рыбного свой за вопроса, несколько рукопись проектах.`,
         src: "string",
-        duration: '1h 28m'
+        duration: '1h 28m',
+        hide: true
         
     },
     {
@@ -25,7 +26,8 @@ export class CoursesService {
                                             Рыбными силуэт, злых агенство единственное которой которое свою коварный она точках пунктуация,
                                             семантика рыбного свой за вопроса, несколько рукопись проектах.`,
         src: "string",
-        duration: '3h 15m'
+        duration: '3h 15m',
+        hide: false
     },
     {
         id: 3,
@@ -35,7 +37,8 @@ export class CoursesService {
                                             Рыбными силуэт, злых агенство единственное которой которое свою коварный она точках пунктуация,
                                             семантика рыбного свой за вопроса, несколько рукопись проектах.`,
         src: "string",
-        duration: '2h 10m'
+        duration: '2h 10m',
+        hide: false
     }];
 
     constructor(){}
@@ -46,6 +49,10 @@ export class CoursesService {
         return this.courseList;
     }
 
+    addCourse(course: CourseItem)
+    {
+        this.courseList.push(course);
+    }
 
     // Удаляем элемент из массива
     deleteCourse(index:number): void
@@ -54,11 +61,15 @@ export class CoursesService {
         console.log(index);
     }
 
-    onEditCourse(index:number): void 
+    onEditCourse(courseItem: CourseItem): void 
     {
-        let th_el = this.courseList[index];
-        th_el.name = "New Lesson " + th_el.id;
-        th_el.desc = "New description";
+        const findCourse = this.courseList.find((course: CourseItem) => {
+
+            return course.id === courseItem.id;
+
+        });
+
+        Object.assign(findCourse, courseItem);
     }
 
 }

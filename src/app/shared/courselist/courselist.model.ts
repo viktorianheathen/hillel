@@ -6,5 +6,5 @@ export interface CourseItem {
 	desc: string | number;
 	src: string;
 	duration: string | number;
-	
+	hide: boolean;
 }
