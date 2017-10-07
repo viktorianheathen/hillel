@@ -1,0 +1,17 @@
+<div class="app_tools">
+    
+    <app-searchbar (search)="onSearch($event)"></app-searchbar>
+
+    
+    <div class="add_less_box">
+        <button class="add_less_item">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <span>Add course</span>
+        </button>
+    </div>
+</div>
+<div class="courses_box">
+    
+    <app-courselist [filterString]='filterStringSubject | async' [courseList] = 'courseList$ | async'></app-courselist>
+
+</div>

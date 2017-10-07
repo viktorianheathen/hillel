@@ -1,0 +1,27 @@
+<section class="edit_form_box">
+    <form action="">
+        <div class="edit_form_inner">
+            <h2>Редактировать урок</h2>
+            <div class="edit_form_column">
+                <input type="text" placeholder="{{ course?.name }}" value="{{ course?.name }}"/>
+                <hr />
+                <input type="text" placeholder="{{ course?.duration }}" value="{{ course?.duration }}"/>
+                <hr />
+                <textarea name="" id="" placeholder="{{ course?.desc }}">
+                    {{ course?.desc }}
+                </textarea>
+                <div class="edit_button_set">
+                    <button type="submit" class="complete_button">Сохранить</button>
+                    <button type="button" class="cansel_button">Отмена</button>
+                </div>
+            </div>
+            <div class="edit_form_column">
+                <p>
+                    {{ course?.desc }}
+                </p>
+                <i></i>
+            </div>
+        </div>
+    </form>
+    <hr />
+</section>

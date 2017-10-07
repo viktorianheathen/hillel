@@ -259,3 +259,79 @@ footer.footer
 }
 
 /*=====================->  ////Футер  <-====================*/
+
+/*=====================->  Форма редактирования урока  <-====================*/
+.edit_form_inner
+{
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	min-height: 300px;
+}
+.edit_form_inner h2
+{
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	color: #376285;
+	height: 100px;
+	font-family: cursive;
+}
+.edit_form_box input
+{
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	padding: 0 10px;
+	color: #00bdaa;
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.edit_form_box textarea
+{
+	border-radius: 5px;
+	border: none;
+	padding: 0 10px;
+	color: #00bdaa;
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 10px;
+	height: 150px;
+	resize: none;
+}
+.edit_form_inner .edit_form_column
+{
+	width: calc(50% - 10px);
+	margin-right: 10px;
+}
+.edit_form_inner .edit_form_column:last-child
+{
+	width: calc(50% - 10px);
+	margin-left: 10px;
+	margin-right: 0;
+}
+.complete_button, .cansel_button
+{
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	padding: 0 10px;
+	text-align: center;
+	background-color: limegreen;
+	color: #fff;
+	transition: opacity 0.3s ease-in-out;
+	font-family: cursive;
+}
+.cansel_button
+{
+	background-color: tomato;
+}
+.complete_button:hover, .cansel_button:hover
+{
+	opacity: 0.6;
+}
+/*=====================->  ////Форма редактирования урока  <-====================*/

@@ -6,9 +6,12 @@ import { CoursesService } from "./courselist.service";
 
 
 import { CourseItemModule } from './courseitem/courseitem.module';
+import { HttpModule } from '@angular/http';
+import { HttpInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 // Custom components
 import { Courselist } from './courselist.component';
+import { InMemoryCoursesService } from './InMemoryDb.service';
 
 import { SortPipe } from './sort.pipe';
 import { TransformPipe } from './transform.pipe';
@@ -24,7 +27,7 @@ Courselist, SortPipe, TransformPipe
 
 imports: [
 
-CommonModule, CourseItemModule
+CommonModule, CourseItemModule, HttpModule, HttpInMemoryWebApiModule.forRoot(InMemoryCoursesService)
 
 ],
 providers: [
